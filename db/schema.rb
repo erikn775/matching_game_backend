@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2021_02_11_181355) do
 
   create_table "cards", force: :cascade do |t|
     t.string "theme"
-    t.text "face"
+    t.json "faces"
     t.integer "game_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
