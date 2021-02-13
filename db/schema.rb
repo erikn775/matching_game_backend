@@ -15,18 +15,18 @@ ActiveRecord::Schema.define(version: 2021_02_11_181355) do
   create_table "cards", force: :cascade do |t|
     t.string "theme"
     t.json "faces"
-    t.integer "game_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["game_id"], name: "index_cards_on_game_id"
   end
 
   create_table "games", force: :cascade do |t|
     t.string "name"
     t.integer "moves", default: 0
     t.boolean "has_won", default: false
+    t.integer "cards_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["cards_id"], name: "index_games_on_cards_id"
   end
 
 end
